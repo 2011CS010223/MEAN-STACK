@@ -1,0 +1,87 @@
+<router-outlet></router-outlet>
+
+<div class="container-fluid bg bg-primary d-flex justify-content-center">
+  <div class="row "><h2 class="h2 text-white p-2"> Data Collection Form </h2></div>
+</div>
+
+
+<br>
+
+<div class="container center border">
+
+  <div class="row "><h2 class="h2">Form</h2> </div>
+
+
+  <div class="form" >
+
+    <form ngNativeValidate 
+                #userForm="ngForm" (ngSubmit)="userForm.form.valid && onSubmit(userForm)">
+      <div class="form-group">
+        <label>Name:</label>
+        <input type="text" [(ngModel)]="name" class="form-control" placeholder="Enter your name" name="name" required/>
+        <br>
+      </div>
+
+      <div class="form-group">
+                <label>Personal Email ID:</label>
+        <input type="email" class="form-control" placeholder="Enter personal email" [(ngModel)]="email"  name="email" required/>
+      </div>
+
+      <div class="form-group">
+        <label>College Email ID:</label>
+        <input type="email" class="form-control" placeholder="Enter college email" [(ngModel)]="clgemail" name="clgemail"  />
+      </div>
+
+      <div class="form-group">
+        <label>Whatsapp Mobile Number:</label>
+        <input type="number" class="form-control" placeholder="Enter Whatsapp No." name="whatsappNumber" [(ngModel)]="whatsappNumber" required/>
+      </div>
+
+      <div class="form-group">
+        <label>Gender:</label><br>
+        <input type="radio" class="form-check-input" name="gender" required/>Male (M) &nbsp;&nbsp;&nbsp;
+        <input type="radio" class="form-check-input" name="gender" />Female (F)
+      </div>
+
+      <div class="form-group">
+        <label>CGPA of Degree</label>
+        <input type="number" class="form-control" placeholder="Degree CGPA" [(ngModel)]="CGPA" name="CGPA"  required/>
+      </div>
+
+      <div class="form-group">
+        <label>Intermediate Marks</label>
+        <input type="number" class="form-control" placeholder="Inter Marks (+12)" [(ngModel)]="interMarks" name="interMarks"  required/>
+      </div>
+
+      <div class="form-group">
+        <label>SSC Marks</label>
+        <input type="number" class="form-control" placeholder="10th Marks" [(ngModel)]="tenthMarks"  name="tenthMarks" required/>
+      </div>
+
+      <div class="form-group">
+        <label>Internship Program:</label><br>
+        <input type="radio" class="form-check-input"  required/>Data Science (DS) &nbsp;&nbsp;&nbsp;
+        <input type="radio" class="form-check-input"  />MEAN Stack (MS) &nbsp;&nbsp;&nbsp;
+        <input type="radio" class="form-check-input"  />Cloud Computing (CC)
+      </div>
+
+      <div class="form-group">
+        <label>Time Slot:</label><br>
+        <input type="radio" class="form-check-input" name="timeslot"  />6PM - 7PM &nbsp;&nbsp;&nbsp;
+        <input type="radio" class="form-check-input" name="timeslot" />7PM - 8PM &nbsp;&nbsp;&nbsp;
+        <input type="radio" class="form-check-input" name="timeslot"  />8PM - 9PM
+      </div>
+
+      <br>
+
+      <div class="form-group mt-2">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+      
+      <br>
+      
+    </form>
+  </div>
+  <!-- <div *ngIf = "formValue != null">
+    Data Collected:<br>
+    <span class="text-primary">{{ formValue | json }}</span> -->
